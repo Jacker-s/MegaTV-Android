@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/tv_background">
+
+    <FrameLayout
+        android:id="@+id/plansMainContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="48dp"
+        android:paddingVertical="32dp">
+
+    <!-- View 1: TV Horizontal Plans Selection -->
+    <LinearLayout
+        android:id="@+id/plansSelectionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/plans_title"
+            android:textColor="@color/text_primary"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="@string/plans_subtitle"
+            android:textColor="@color/text_secondary"
+            android:textSize="16sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvPlans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:clipToPadding="false"
+            android:orientation="horizontal" />
+
+        <ProgressBar
+            android:id="@+id/plansProgressBar"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="24dp"
+            android:indeterminateTint="@color/primary_default"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvPlansError"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/status_expired"
+            android:textSize="16sp"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <!-- View 2: TV Split-Screen Large QR Code Pix Payment -->
+    <LinearLayout
+        android:id="@+id/pixPaymentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <!-- Left Side: Large QR Code for Easy Sofa Scanning -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_glass_card"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:elevation="8dp"
+                android:padding="16dp">
+
+                <com.mega.tv.ui.custom.TvQrCodeView
+                    android:id="@+id/qrCodeView"
+                    android:layout_width="280dp"
+                    android:layout_height="280dp"
+                    android:scaleType="fitCenter" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Right Side: Plan Details, Copia e Cola & Live Polling Status -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="44dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvPixPlanTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ativação Instantânea via PIX"
+                android:textColor="@color/text_primary"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvPixAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:textColor="@color/accent_color"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/pix_instructions"
+                android:textColor="@color/text_secondary"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/tvPixCopyPaste"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_glass_card"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:padding="14dp"
+                android:textColor="@color/text_secondary"
+                android:textSize="13sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ProgressBar
+                    android:id="@+id/pollingProgressBar"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:indeterminateTint="@color/status_pending" />
+
+                <TextView
+                    android:id="@+id/tvPollingStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="@string/pix_waiting_confirmation"
+                    android:textColor="@color/status_pending"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:orientation="horizontal">
+
+                <com.mega.tv.ui.custom.TvFocusButton
+                    android:id="@+id/btnCopyPixCode"
+                    android:layout_width="0dp"
+                    android:layout_height="52dp"
+                    android:layout_weight="1"
+                    android:text="Copiar Código PIX"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <com.mega.tv.ui.custom.TvFocusButton
+                    android:id="@+id/btnCancelPayment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="52dp"
+                    android:layout_marginStart="14dp"
+                    android:paddingHorizontal="24dp"
+                    android:text="Trocar Plano"
+                    android:textSize="15sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+    </FrameLayout>
+</FrameLayout>

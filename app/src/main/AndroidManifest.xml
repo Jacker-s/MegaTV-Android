@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!-- Universal Support: Android Mobile (Touch) + Android TV / Google TV (Leanback D-Pad) -->
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+    <uses-feature
+        android:name="android.software.leanback"
+        android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:banner="@drawable/banner"
+        android:icon="@drawable/ic_launcher_tv"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@drawable/ic_launcher_tv"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MegaTV"
+        android:usesCleartextTraffic="true">
+
+        <!-- 1. Splash Screen (Mobile & Android TV Launcher) -->
+        <activity
+            android:name=".ui.splash.SplashActivity"
+            android:configChanges="orientation|screenSize|smallestScreenSize|screenLayout|keyboardHidden"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 2. Login Screen (Mobile & TV Virtual Keyboard) -->
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:configChanges="orientation|screenSize|smallestScreenSize|screenLayout|keyboardHidden"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+
+        <!-- 3. Register Screen (Mobile & TV Virtual Keyboard) -->
+        <activity
+            android:name=".ui.login.RegisterActivity"
+            android:configChanges="orientation|screenSize|smallestScreenSize|screenLayout|keyboardHidden"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+
+        <!-- 4. Plans & PIX Screen (Mobile & TV) -->
+        <activity
+            android:name=".ui.plans.PlansActivity"
+            android:configChanges="orientation|screenSize|smallestScreenSize|screenLayout|keyboardHidden"
+            android:exported="false" />
+
+        <!-- 5. Home Screen (Mobile Bottom Nav & TV Sidebar Rail) -->
+        <activity
+            android:name=".ui.home.HomeActivity"
+            android:configChanges="orientation|screenSize|smallestScreenSize|screenLayout|keyboardHidden"
+            android:exported="false"
+            android:launchMode="singleTask" />
+
+        <!-- 6. Movie Details Screen (Mobile & TV) -->
+        <activity
+            android:name=".ui.details.MovieDetailActivity"
+            android:configChanges="orientation|screenSize|smallestScreenSize|screenLayout|keyboardHidden"
+            android:exported="false" />
+
+        <!-- 7. Series Details Screen (Mobile & TV) -->
+        <activity
+            android:name=".ui.details.SeriesDetailActivity"
+            android:configChanges="orientation|screenSize|smallestScreenSize|screenLayout|keyboardHidden"
+            android:exported="false" />
+
+        <!-- 8. Channels Screen (Mobile & TV Grid) -->
+        <activity
+            android:name=".ui.channels.ChannelsActivity"
+            android:configChanges="orientation|screenSize|smallestScreenSize|screenLayout|keyboardHidden"
+            android:exported="false" />
+
+        <!-- 9. Fullscreen Native Player (Landscape Touch Gestures & TV D-Pad) -->
+        <activity
+            android:name=".ui.player.PlayerActivity"
+            android:configChanges="orientation|screenSize|smallestScreenSize|screenLayout|keyboardHidden"
+            android:exported="false"
+            android:screenOrientation="sensorLandscape"
+            android:theme="@style/Theme.MegaTV.Player" />
+
+        <!-- 10. Profile Screen (Mobile & TV) -->
+        <activity
+            android:name=".ui.profile.ProfileActivity"
+            android:configChanges="orientation|screenSize|smallestScreenSize|screenLayout|keyboardHidden"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+
+        <!-- 11. Search Movies & Series Screen (Mobile & TV) -->
+        <activity
+            android:name=".ui.search.SearchActivity"
+            android:configChanges="orientation|screenSize|smallestScreenSize|screenLayout|keyboardHidden"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+
+    </application>
+
+</manifest>

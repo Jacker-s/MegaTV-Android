@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MEga TV</string>
+    <string name="nav_home">Início</string>
+    <string name="nav_movies">Filmes</string>
+    <string name="nav_series">Séries</string>
+    <string name="nav_channels">Canais</string>
+    <string name="nav_profile">Perfil</string>
+
+    <string name="btn_watch">Assistir</string>
+    <string name="btn_resume">Continuar Assistindo</string>
+    <string name="btn_trailer">Ver Trailer</string>
+    <string name="btn_login">Entrar</string>
+    <string name="btn_subscribe">Assinar Plano</string>
+    <string name="btn_logout">Sair da Conta</string>
+    <string name="btn_save">Salvar Alterações</string>
+    <string name="btn_back">Voltar</string>
+
+    <string name="section_continue_watching">Continuar Assistindo</string>
+    <string name="section_trending">Em Alta</string>
+    <string name="section_related_movies">Filmes Relacionados</string>
+    <string name="section_related_series">Séries Relacionadas</string>
+    <string name="section_seasons">Temporadas</string>
+    <string name="section_episodes">Episódios</string>
+
+    <string name="login_title">Bem-vindo ao MEga TV</string>
+    <string name="login_subtitle">Faça login com seu usuário e senha para ter acesso ilimitado</string>
+    <string name="label_username">Usuário</string>
+    <string name="label_password">Senha</string>
+    <string name="label_email">E-mail</string>
+    <string name="hint_username">Digite seu usuário</string>
+    <string name="hint_password">Digite sua senha</string>
+    <string name="hint_email">Digite seu e-mail</string>
+
+    <string name="plans_title">Escolha seu Plano de Acesso</string>
+    <string name="plans_subtitle">Selecione o plano desejado para gerar o código PIX instantâneo</string>
+    <string name="pix_instructions">Escaneie o QR Code abaixo pelo aplicativo do seu banco para ativar sua conta na hora:</string>
+    <string name="pix_copy_paste_hint">Ou use a chave Pix Copia e Cola:</string>
+    <string name="pix_waiting_confirmation">Aguardando confirmação do pagamento…</string>
+    <string name="pix_approved_message">Pagamento aprovado com sucesso! Redirecionando…</string>
+
+    <string name="profile_title">Minha Conta</string>
+    <string name="profile_subscription_status">Status da Assinatura:</string>
+    <string name="profile_active">Ativa</string>
+    <string name="profile_expired">Expirada</string>
+    <string name="profile_expires_at">Vence em:</string>
+
+    <string name="error_generic">Ocorreu um erro ao carregar os dados. Tente novamente.</string>
+    <string name="error_auth">Usuário ou senha incorretos.</string>
+    <string name="error_expired">Sua assinatura expirou. Renove seu plano para continuar assistindo.</string>
+    <string name="loading">Carregando…</string>
+</resources>
