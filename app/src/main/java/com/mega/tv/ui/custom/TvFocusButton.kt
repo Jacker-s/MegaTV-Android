@@ -26,7 +26,7 @@ class TvFocusButton @JvmOverloads constructor(
     defStyleAttr: Int = androidx.appcompat.R.attr.buttonStyle
 ) : AppCompatButton(context, attrs, defStyleAttr) {
 
-    private val cornerRadiusDp = 12f
+    private var cornerRadiusDp = 10f
     var isSecondaryButton: Boolean = false
     private val isTvMode: Boolean = DeviceUtils.isTv(context)
 
@@ -41,7 +41,17 @@ class TvFocusButton @JvmOverloads constructor(
         isAllCaps = false
         elevation = 4f
         stateListAnimator = null
+        minWidth = 0
+        minimumWidth = 0
+        minHeight = 0
+        minimumHeight = 0
+        setPadding(0, 0, 0, 0)
 
+        updateBackground(isFocused)
+    }
+
+    fun setCornerRadiusDp(radius: Float) {
+        cornerRadiusDp = radius
         updateBackground(isFocused)
     }
 
